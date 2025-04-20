@@ -42,7 +42,7 @@ end
 
 local RenderStepped = RunService.RenderStepped
 
-local ProtectGui = protectgui or (syn and syn.protect_gui) or function() end
+--local ProtectGui = protectgui or (syn and syn.protect_gui) or function() end
 
 local Themes = {
 	Names = {
@@ -1446,12 +1446,14 @@ Library.Creator = Creator
 
 local New = Creator.New
 
+
+		
 local GUI = New("ScreenGui", { --RunService:IsStudio() and
-	Parent = gethui(game:GetService("CoreGui")) or game:GetService("CoreGui") or LocalPlayer.PlayerGui,
+	Parent = game:GetService("CoreGui")--gethui(game:GetService("CoreGui")) or game:GetService("CoreGui") or LocalPlayer.PlayerGui,
     Name = FeariesHub_Name,
 })
 Library.GUI = GUI
-ProtectGui(GUI)
+--ProtectGui(GUI)
 
 function Library:SafeCallback(Function, ...)
 	if not Function then
