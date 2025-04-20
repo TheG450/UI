@@ -1447,7 +1447,7 @@ Library.Creator = Creator
 local New = Creator.New
 
 local GUI = New("ScreenGui", {
-	Parent = RunService:IsStudio() and LocalPlayer.PlayerGui or game:GetService("CoreGui"),
+	Parent = RunService:IsStudio() and gethui() or  LocalPlayer.PlayerGui or game:GetService("CoreGui"),
     Name = FeariesHub_Name,
 })
 Library.GUI = GUI
