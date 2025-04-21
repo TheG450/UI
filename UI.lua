@@ -31,7 +31,7 @@ else
 end
 
 if Show_Button then
-	Mobile = true
+	Mobile = false
 end
 
 local fischbypass
@@ -6408,6 +6408,7 @@ local MinimizeButton = New("TextButton", {
 
 local Minimizer
 
+--[[
 if Mobile then
 	Minimizer = New("Frame", {
 		Parent = GUI,
@@ -6453,6 +6454,7 @@ else
 	})
 end
 
+
 Creator.AddSignal(Minimizer.InputBegan, function(Input)
 	if
 		Input.UserInputType == Enum.UserInputType.MouseButton1
@@ -6469,6 +6471,7 @@ Creator.AddSignal(Minimizer.InputBegan, function(Input)
 		end)
 	end
 end)
+]]
 
 Creator.AddSignal(MinimizeButton.InputBegan, function(Input)
 	if
@@ -6495,6 +6498,7 @@ Creator.AddSignal(MinimizeButton.InputChanged, function(Input)
 		DragInput = Input
 	end
 end)
+--[[
 Creator.AddSignal(Minimizer.InputChanged, function(Input)
 	if
 		Input.UserInputType == Enum.UserInputType.MouseMovement
@@ -6503,6 +6507,7 @@ Creator.AddSignal(Minimizer.InputChanged, function(Input)
 		DragInput = Input
 	end
 end)
+]]
 
 Creator.AddSignal(UserInputService.InputChanged, function(Input)
 	if Input == DragInput and Dragging then
@@ -6538,12 +6543,5 @@ end)
 
 task.wait(0.1)
 
-local LibraryTable = {
-	["Library"] = Library,
-	["SaveManager"] = SaveManager,
-	["InterfaceManager"] = InterfaceManager,
-	["Mobile"] = Mobile,
-	["FeariesHub_Name"] = FeariesHub_Name
-}
-
-return LibraryTable
+return Library, SaveManager, InterfaceManager, Mobile, FeariesHub_Name
+					
