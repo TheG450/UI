@@ -1466,7 +1466,7 @@ function Library:SafeCallback(Function, ...)
 
 		if not i then
 			return Library:Notify({
-				Title = "Interface",
+				Title = "FeariseHub",
 				Content = "Callback error",
 				SubContent = Event,
 				Duration = 5,
@@ -1474,7 +1474,7 @@ function Library:SafeCallback(Function, ...)
 		end
 
 		return Library:Notify({
-			Title = "Interface",
+			Title = "FeariseHub",
 			Content = "Callback error",
 			SubContent = Event:sub(i + 1),
 			Duration = 5,
@@ -2901,7 +2901,7 @@ Components.TitleBar = (function()
 		TitleBar.CloseButton = BarButton(Components.Assets.Close, UDim2.new(1, -4, 0, 4), TitleBar.Frame, function()
 			Library.Window:Dialog({
 				Title = "Close",
-				Content = "Are you sure you want to unload the interface?",
+				Content = "Are you sure you want to unload the FeariseHub?",
 				Buttons = {
 					{
 						Title = "Yes",
@@ -3238,14 +3238,14 @@ Components.Window = (function()
 				MinimizeNotif = true
 				local Key = Library.MinimizeKeybind and Library.MinimizeKeybind.Value or Library.MinimizeKey.Name
 				if not Mobile then Library:Notify({
-					Title = "Interface",
-					Content = "Press " .. Key .. " to toggle the interface.",
+					Title = "FeariseHub",
+					Content = "Press " .. Key .. " to toggle the FeariseHub.",
 					Duration = 6
 					})
 				else 
 					Library:Notify({
-						Title = "Interface",
-						Content = "Tap to the button to toggle the interface.",
+						Title = "FeariseHub",
+						Content = "Tap to the button to toggle the FeariseHub.",
 						Duration = 6
 					})
 				end
@@ -6055,7 +6055,7 @@ local SaveManager = {} do
 				local success, err = self:Load(name)
 				if not success then
 					return self.Library:Notify({
-						Title = "Interface",
+						Title = "FeariseHub",
 						Content = "Config loader",
 						SubContent = "Failed to load autoload config: " .. err,
 						Duration = 7
@@ -6063,7 +6063,7 @@ local SaveManager = {} do
 				end
 
 				self.Library:Notify({
-					Title = "Interface",
+					Title = "FeariseHub",
 					Content = "Config loader",
 					SubContent = string.format("Auto loaded config %q", name),
 					Duration = 7
@@ -6087,7 +6087,7 @@ local SaveManager = {} do
 
 				if name:gsub(" ", "") == "" then 
 					return self.Library:Notify({
-						Title = "Interface",
+						Title = "FeariseHub",
 						Content = "Config loader",
 						SubContent = "Invalid config name (empty)",
 						Duration = 7
@@ -6097,7 +6097,7 @@ local SaveManager = {} do
 				local success, err = self:Save(name)
 				if not success then
 					return self.Library:Notify({
-						Title = "Interface",
+						Title = "FeariseHub",
 						Content = "Config loader",
 						SubContent = "Failed to save config: " .. err,
 						Duration = 7
@@ -6105,7 +6105,7 @@ local SaveManager = {} do
 				end
 
 				self.Library:Notify({
-					Title = "Interface",
+					Title = "FeariseHub",
 					Content = "Config loader",
 					SubContent = string.format("Created config %q", name),
 					Duration = 7
@@ -6122,7 +6122,7 @@ local SaveManager = {} do
 			local success, err = self:Load(name)
 			if not success then
 				return self.Library:Notify({
-					Title = "Interface",
+					Title = "FeariseHub",
 					Content = "Config loader",
 					SubContent = "Failed to load config: " .. err,
 					Duration = 7
@@ -6130,7 +6130,7 @@ local SaveManager = {} do
 			end
 
 			self.Library:Notify({
-				Title = "Interface",
+				Title = "FeariseHub",
 				Content = "Config loader",
 				SubContent = string.format("Loaded config %q", name),
 				Duration = 7
@@ -6143,7 +6143,7 @@ local SaveManager = {} do
 			local success, err = self:Save(name)
 			if not success then
 				return self.Library:Notify({
-					Title = "Interface",
+					Title = "FeariseHub",
 					Content = "Config loader",
 					SubContent = "Failed to overwrite config: " .. err,
 					Duration = 7
@@ -6151,7 +6151,7 @@ local SaveManager = {} do
 			end
 
 			self.Library:Notify({
-				Title = "Interface",
+				Title = "FeariseHub",
 				Content = "Config loader",
 				SubContent = string.format("Overwrote config %q", name),
 				Duration = 7
@@ -6169,7 +6169,7 @@ local SaveManager = {} do
 			writefile(self.Folder .. "/autoload.txt", name)
 			AutoloadButton:SetDesc("Current autoload config: " .. name)
 			self.Library:Notify({
-				Title = "Interface",
+				Title = "FeariseHub",
 				Content = "Config loader",
 				SubContent = string.format("Set %q to auto load", name),
 				Duration = 7
