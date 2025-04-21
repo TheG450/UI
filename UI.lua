@@ -6,7 +6,7 @@ dsc.gg/hydrahub  |   31.01 - added Show_Assets toggle. Soon ill make normal bypa
 ]]--    
 
 --- FLUENT PLUS SETTINGS ---
-local Show_Button = true -- Shows the button for toggle fluent ui manually. If "false", works only on mobile, if "true", works everytime.
+local Show_Button = false -- Shows the button for toggle fluent ui manually. If "false", works only on mobile, if "true", works everytime.
 local Button_Icon = "rbxassetid://112196145837803" -- Icon of the button for toggle fluent ui
 local FeariesHub_Name = "FeariseHub"
 ----------------------------
@@ -6538,4 +6538,12 @@ end)
 
 task.wait(0.1)
 
-return Library, SaveManager, InterfaceManager, Mobile, FeariesHub_Name
+local LibraryTable = {
+	["Library"] = Library,
+	["SaveManager"] = SaveManager,
+	["InterfaceManager"] = InterfaceManager,
+	["Mobile"] = Mobile,
+	["FeariesHub_Name"] = FeariesHub_Name
+}
+
+return LibraryTable
